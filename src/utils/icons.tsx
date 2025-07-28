@@ -1,0 +1,51 @@
+import {
+  Code,
+  Database,
+  Cloud,
+  Smartphone,
+  Zap,
+  Palette,
+  Globe,
+  Briefcase,
+  Award,
+  Calendar,
+  ExternalLink,
+  Github,
+  Mail,
+  ArrowRight,
+  Download,
+  Menu,
+  X,
+  Phone,
+  Linkedin,
+  MapPin,
+  GraduationCap,
+} from 'lucide-react';
+
+export const iconMap: { [key: string]: React.ComponentType<any> } = {
+  Code,
+  Database,
+  Cloud,
+  Smartphone,
+  Zap,
+  Palette,
+  Globe,
+  Briefcase,
+  Award,
+  Calendar,
+  ExternalLink,
+  Github,
+  Mail,
+  ArrowRight,
+  Download,
+  Menu,
+  X,
+  Phone,
+  Linkedin,
+  MapPin,
+  GraduationCap,
+};
+
+export const getIcon = (iconName: string): React.ComponentType<any> => {
+  return iconMap[iconName] || Globe;
+}; 
