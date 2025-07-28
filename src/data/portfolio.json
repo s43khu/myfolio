@@ -1,0 +1,180 @@
+{
+  "personal": {
+    "name": "Abhishek Thakur",
+    "title": "Full Stack Developer",
+    "email": "s43khu@gmail.com",
+    "phone": "+91 8264751934",
+    "location": "HP, JawalaJi, India (Kangra)",
+    "bio": "A passionate Full Stack Developer with expertise in modern web technologies. I build scalable applications and create exceptional user experiences.",
+    "description": "Specialized in JavaScript, React, Next.js, and frontend technologies. I love turning complex problems into simple, beautiful solutions.",
+    "stats": {
+      "experience": "2+",
+      "projects": "10+",
+      "clients": "20+"
+    },
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/abhishek-thakur-7503b2227",
+      "github": "https://github.com/s43khu",
+      "twitter": "https://twitter.com/ig_shekhu"
+    }
+  },
+  "skills": [
+    {
+      "icon": "Code",
+      "title": "Frontend Development",
+      "description": "React, Next.js, Vue, TypeScript",
+      "subtitle": "Modern UI/UX with responsive design"
+    },
+    {
+      "icon": "Database",
+      "title": "Backend Development",
+      "description": "Firebase, Node.js",
+      "subtitle": "RESTful APIs and database design"
+    },
+    {
+      "icon": "Cloud",
+      "title": "State Management",
+      "description": "Redux, Context API",
+      "subtitle": "Efficient state handling"
+    },
+    {
+      "icon": "Smartphone",
+      "title": "Animation & 3D",
+      "description": "GSAP, Three.js",
+      "subtitle": "Interactive web experiences"
+    },
+    {
+      "icon": "Zap",
+      "title": "Styling",
+      "description": "Tailwind CSS",
+      "subtitle": "Beautiful, responsive designs"
+    }
+  ],
+  "projects": [
+    {
+      "icon": "Globe",
+      "title": "AbyssGate",
+      "description": "A project from GitHub showcasing modern web development skills.",
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "category": "Full Stack",
+      "liveUrl": "https://github.com/s43khu/abyssgate",
+      "githubUrl": "https://github.com/s43khu/abyssgate"
+    },
+    {
+      "icon": "Globe",
+      "title": "DemoRun",
+      "description": "Another project from GitHub demonstrating frontend capabilities.",
+      "technologies": [
+        "React",
+        "GSAP",
+        "Three.js"
+      ],
+      "category": "Frontend",
+      "liveUrl": "https://github.com/s43khu/demorun",
+      "githubUrl": "https://github.com/s43khu/demorun"
+    },
+    {
+      "icon": "Globe",
+      "title": "AI Content Generator",
+      "description": "An AI-powered content generation tool that creates SEO-optimized articles, social media posts, and marketing copy.",
+      "technologies": [
+        "Python",
+        "OpenAI API",
+        "FastAPI",
+        "React",
+        "Docker"
+      ],
+      "category": "AI/ML",
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/yourname/project"
+    },
+    {
+      "icon": "Globe",
+      "title": "Portfolio Website",
+      "description": "A modern, responsive portfolio website showcasing projects, skills, and experience with smooth animations.",
+      "technologies": [
+        "Next.js",
+        "Framer Motion",
+        "Tailwind CSS",
+        "TypeScript"
+      ],
+      "category": "Frontend",
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/yourname/project"
+    }
+  ],
+  "experience": {
+    "stats": [
+      {
+        "icon": "Briefcase",
+        "value": "2+",
+        "label": "Years Experience"
+      },
+      {
+        "icon": "Award",
+        "value": "10+",
+        "label": "Projects Delivered"
+      },
+      {
+        "icon": "Calendar",
+        "value": "100%",
+        "label": "Client Satisfaction"
+      }
+    ],
+    "journey": [
+      {
+        "id": 1,
+        "title": "Full Stack Developer",
+        "company": "Esfera",
+        "period": "2023 - 2025",
+        "description": "Worked as a JavaScript Developer (Full Stack) building modern web applications.",
+        "achievements": [
+          "Developed multiple projects using React, Next.js, and Firebase",
+          "Implemented responsive designs with Tailwind CSS",
+          "Worked with animations using GSAP and Three.js"
+        ],
+        "technologies": [
+          "JavaScript",
+          "React",
+          "Next.js",
+          "Firebase",
+          "Tailwind CSS",
+          "NodeJs"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "email": "s43khu@gmail.com",
+    "phone": "+91 8264751934",
+    "location": "HP, JawalaJi, India (Kangra)",
+    "availability": "Available for new opportunities"
+  },
+  "navigation": [
+    {
+      "name": "About",
+      "href": "#about"
+    },
+    {
+      "name": "Skills",
+      "href": "#skills"
+    },
+    {
+      "name": "Projects",
+      "href": "#projects"
+    },
+    {
+      "name": "Experience",
+      "href": "#experience"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ]
+}
