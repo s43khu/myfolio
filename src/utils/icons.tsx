@@ -20,9 +20,12 @@ import {
   Linkedin,
   MapPin,
   GraduationCap,
-} from 'lucide-react';
+} from "lucide-react";
+import { ComponentType } from "react";
 
-export const iconMap: { [key: string]: React.ComponentType<any> } = {
+export const iconMap: {
+  [key: string]: ComponentType<{ className?: string; size?: number }>;
+} = {
   Code,
   Database,
   Cloud,
@@ -46,6 +49,8 @@ export const iconMap: { [key: string]: React.ComponentType<any> } = {
   GraduationCap,
 };
 
-export const getIcon = (iconName: string): React.ComponentType<any> => {
+export const getIcon = (
+  iconName: string
+): ComponentType<{ className?: string; size?: number }> => {
   return iconMap[iconName] || Globe;
-}; 
+};
