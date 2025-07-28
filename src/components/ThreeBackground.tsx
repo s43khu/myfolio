@@ -34,7 +34,7 @@ export default function ParticleBackground() {
     camera.position.z = 5;
 
     // Particle system
-    const particleCount = 10;
+    const particleCount = 5;
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
