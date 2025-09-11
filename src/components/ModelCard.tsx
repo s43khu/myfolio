@@ -1,21 +1,20 @@
 "use client";
 
+// NOTE: component can be found on the Three Examples on sandbox, it's used here as a reference.
 import { useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Text, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 
-function WelcomeText({ size = 0.15 }: { size?: number }) {
+function JSText({ size = 0.15 }: { size?: number }) {
   const textRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (textRef.current) {
-      // Add subtle floating animation
       textRef.current.position.y =
         Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
 
-      // Add gentle rotation
       textRef.current.rotation.y =
         Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
     }
@@ -36,224 +35,81 @@ function WelcomeText({ size = 0.15 }: { size?: number }) {
           delay: 0.5,
         }
       );
+
+      // Add pulsing animation for futuristic effect
+      gsap.to(textRef.current.scale, {
+        x: size * 1.05,
+        y: size * 1.05,
+        z: size * 1.05,
+        duration: 2,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 2,
+      });
     }
   }, [size]);
 
   return (
     <group ref={textRef} position={[0, 0, 0]} scale={[size, size, size]}>
-      {/* W */}
-      <mesh position={[-1.2, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[-1.05, 0.15, 0]}>
-        <boxGeometry args={[0.12, 0.25, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[-0.9, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
+      {/* Main text with theme-consistent glow */}
+      <Text
+        position={[0, 0, 0]}
+        fontSize={2.2}
+        color="#ff6600"
+        anchorX="center"
+        anchorY="middle"
+        letterSpacing={0.3}
+        material={
+          new THREE.MeshStandardMaterial({
+            color: "#ff6600",
+            emissive: "#ff6600",
+            emissiveIntensity: 0.8,
+            roughness: 0.1,
+            metalness: 0.9,
+          })
+        }
+      >
+        JS
+      </Text>
 
-      {/* E */}
-      <mesh position={[-0.6, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[-0.45, 0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[-0.45, 0, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[-0.45, -0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
+      {/* Orange outline effect */}
+      <Text
+        position={[0.08, -0.08, -0.03]}
+        fontSize={2.2}
+        color="#ff4500"
+        anchorX="center"
+        anchorY="middle"
+        letterSpacing={0.3}
+        material={
+          new THREE.MeshBasicMaterial({
+            color: "#ff4500",
+            transparent: true,
+            opacity: 0.7,
+          })
+        }
+      >
+        JS
+      </Text>
 
-      {/* L */}
-      <mesh position={[0.1, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[0.25, -0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-
-      {/* C */}
-      <mesh position={[0.55, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[0.7, 0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[0.7, -0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-
-      {/* O */}
-      <mesh position={[1.0, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[1.15, 0.175, 0]}>
-        <boxGeometry args={[0.12, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[1.15, -0.175, 0]}>
-        <boxGeometry args={[0.12, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[1.3, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-
-      {/* M */}
-      <mesh position={[1.55, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[1.7, 0.125, 0]}>
-        <boxGeometry args={[0.12, 0.25, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[1.85, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[2.0, 0.125, 0]}>
-        <boxGeometry args={[0.12, 0.25, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[2.15, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-
-      {/* E */}
-      <mesh position={[2.4, 0, 0]}>
-        <boxGeometry args={[0.12, 0.5, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[2.55, 0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[2.55, 0, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-      <mesh position={[2.55, -0.175, 0]}>
-        <boxGeometry args={[0.25, 0.12, 0.1]} />
-        <meshStandardMaterial
-          color="#ff6600"
-          emissive="#ff6600"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
+      {/* Holographic effect layer */}
+      <Text
+        position={[0.04, -0.04, 0.02]}
+        fontSize={2.2}
+        color="#ffaa00"
+        anchorX="center"
+        anchorY="middle"
+        letterSpacing={0.3}
+        material={
+          new THREE.MeshBasicMaterial({
+            color: "#ffaa00",
+            transparent: true,
+            opacity: 0.4,
+          })
+        }
+      >
+        JS
+      </Text>
     </group>
   );
 }
@@ -266,13 +122,25 @@ function FloatingParticles() {
   const colors = new Float32Array(particlesCount * 3);
 
   for (let i = 0; i < particlesCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 3; // X
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 3; // Y
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 3; // Z
+    positions[i * 3] = (Math.random() - 0.5) * 4; // X
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 4; // Y
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 4; // Z
 
-    colors[i * 3] = 1; // R
-    colors[i * 3 + 1] = 0.4; // G
-    colors[i * 3 + 2] = 0; // B
+    // Theme-consistent orange colors
+    const colorChoice = Math.random();
+    if (colorChoice < 0.33) {
+      colors[i * 3] = 1; // R - Bright Orange
+      colors[i * 3 + 1] = 0.4; // G
+      colors[i * 3 + 2] = 0; // B
+    } else if (colorChoice < 0.66) {
+      colors[i * 3] = 1; // R - Red-Orange
+      colors[i * 3 + 1] = 0.27; // G
+      colors[i * 3 + 2] = 0; // B
+    } else {
+      colors[i * 3] = 1; // R - Golden Orange
+      colors[i * 3 + 1] = 0.67; // G
+      colors[i * 3 + 2] = 0; // B
+    }
   }
 
   useFrame((state) => {
@@ -403,21 +271,26 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
             >
               <PerspectiveCamera makeDefault position={[0, 0, 2]} />
 
-              {/* Lighting */}
-              <ambientLight intensity={0.2} />
+              {/* Theme-consistent Lighting */}
+              <ambientLight intensity={0.3} />
               <directionalLight
                 position={[5, 5, 5]}
-                intensity={0.6}
+                intensity={1.2}
                 color="#ff6600"
               />
               <pointLight
                 position={[-5, -5, -5]}
-                intensity={0.2}
-                color="#ff6600"
+                intensity={0.6}
+                color="#ff4500"
+              />
+              <pointLight
+                position={[0, 0, 3]}
+                intensity={0.8}
+                color="#ffaa00"
               />
 
-              {/* Welcome Text */}
-              <WelcomeText size={size} />
+              {/* JS Text */}
+              <JSText size={size} />
 
               {/* Floating Particles */}
               <FloatingParticles />
@@ -426,8 +299,7 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
               <OrbitControls
                 enableZoom={false}
                 enablePan={false}
-                autoRotate
-                autoRotateSpeed={0.2}
+                autoRotate={false}
                 maxPolarAngle={Math.PI / 2}
                 minPolarAngle={Math.PI / 3}
               />

@@ -64,10 +64,10 @@ export default function Experience() {
     <section ref={sectionRef} id="experience" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 quantico-bold">
             <span className="text-gradient">Experience & Journey</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto quantico-regular">
             My professional journey and achievements over the years
           </p>
         </div>
@@ -91,10 +91,12 @@ export default function Experience() {
                       <IconComponent className="w-8 h-8 text-primary" />
                     </div>
                   )}
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2 quantico-bold">
                     <Counter end={stat.value} suffix={stat.suffix} />
                   </div>
-                  <p className="text-muted-foreground">{stat.label}</p>
+                  <p className="text-muted-foreground quantico-regular">
+                    {stat.label}
+                  </p>
                 </div>
               </CardParticles>
             );
@@ -102,7 +104,7 @@ export default function Experience() {
         </div>
 
         <div className="relative">
-          <h3 className="text-2xl font-bold text-center mb-12 text-gradient">
+          <h3 className="text-2xl font-bold text-center mb-12 text-gradient quantico-bold">
             Professional Journey
           </h3>
           <JourneyTree />

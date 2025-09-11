@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { getNavigation, getPersonalInfo } from "@/utils/data";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +12,18 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = getNavigation();
   const personalInfo = getPersonalInfo();
+
+  // Handle navigation clicks
+  const handleNavClick = (href: string) => {
+    if (href === "#about") {
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (href === "#contact") {
+      // Scroll to bottom
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+    setIsMenuOpen(false); // Close mobile menu
+  };
 
   const nameRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -56,7 +68,10 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div ref={nameRef} className="text-2xl font-bold text-gradient">
+          <div
+            ref={nameRef}
+            className="text-2xl font-bold text-gradient quantico-bold"
+          >
             AT
           </div>
 
@@ -65,8 +80,16 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 rounded-lg text-foreground hover:text-primary transition-colors duration-300"
+                download={item.name === "Resume" ? "resume_my.pdf" : undefined}
+                onClick={(e) => {
+                  if (item.href === "#about" || item.href === "#contact") {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }
+                }}
+                className="px-4 py-2 rounded-lg text-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 quantico-regular"
               >
+                {item.name === "Resume" && <Download className="w-4 h-4" />}
                 {item.name}
               </a>
             ))}
@@ -91,9 +114,20 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="px-4 py-2 rounded-lg text-foreground hover:text-primary transition-colors duration-300"
+                  download={
+                    item.name === "Resume" ? "resume_my.pdf" : undefined
+                  }
+                  onClick={(e) => {
+                    if (item.href === "#about" || item.href === "#contact") {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    } else {
+                      setIsMenuOpen(false);
+                    }
+                  }}
+                  className="px-4 py-2 rounded-lg text-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 quantico-regular"
                 >
+                  {item.name === "Resume" && <Download className="w-4 h-4" />}
                   {item.name}
                 </a>
               ))}

@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Quantico Font Classes */
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 0%;
@@ -56,10 +82,15 @@
   body {
     background: hsl(var(--background));
     @apply text-foreground;
+    font-family: "Quantico", sans-serif;
   }
 }
 
 @layer utilities {
+  .font-quantico {
+    font-family: "Quantico", sans-serif;
+  }
+  
   .text-gradient {
     @apply bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent;
   }

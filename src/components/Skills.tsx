@@ -51,10 +51,10 @@ export default function Skills() {
     <section ref={sectionRef} id="skills" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 quantico-bold">
             <span className="text-gradient">Skills & Expertise</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto quantico-regular">
             Technologies and tools I use to bring ideas to life
           </p>
         </div>
@@ -79,14 +79,14 @@ export default function Skills() {
                         <IconComponent className="w-6 h-6 text-primary" />
                       </div>
                     )}
-                    <h3 className="text-xl font-semibold text-foreground">
+                    <h3 className="text-xl font-semibold text-foreground quantico-bold">
                       {skill.title}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground mb-3">
+                  <p className="text-muted-foreground mb-3 quantico-regular">
                     {skill.description}
                   </p>
-                  <p className="text-sm text-primary font-medium">
+                  <p className="text-sm text-primary font-medium quantico-regular">
                     {skill.subtitle}
                   </p>
                 </div>

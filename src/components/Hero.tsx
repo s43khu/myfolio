@@ -28,6 +28,7 @@ export default function Hero() {
 
   // Shine refs for buttons
   const getInTouchShineRef = useGSAPShine<HTMLAnchorElement>();
+  const downloadResumeShineRef = useGSAPShine<HTMLAnchorElement>();
   const githubShineRef = useGSAPShine<HTMLAnchorElement>();
   const linkedinShineRef = useGSAPShine<HTMLAnchorElement>();
   const twitterShineRef = useGSAPShine<HTMLAnchorElement>();
@@ -213,10 +214,10 @@ export default function Hero() {
 
             <h2
               ref={titleRef}
-              className="text-xl md:text-2xl text-muted-foreground mb-6 h-12"
+              className="text-xl md:text-2xl text-muted-foreground mb-6 h-12 quantico-regular"
             />
 
-            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:ml-auto lg:mr-0">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:ml-auto lg:mr-0 quantico-regular">
               {personalInfo.description}
             </p>
 
@@ -224,10 +225,10 @@ export default function Hero() {
             <div className="flex flex-wrap justify-center lg:justify-end gap-6 mb-8">
               {statsArray.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-gradient mb-1">
+                  <div className="text-2xl md:text-3xl font-bold text-gradient mb-1 quantico-bold">
                     <Counter end={stat.value} suffix={stat.suffix} />
                   </div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-xs text-muted-foreground quantico-regular">
                     {stat.label}
                   </div>
                 </div>
@@ -239,10 +240,20 @@ export default function Hero() {
               <a
                 ref={getInTouchShineRef}
                 href={`mailto:${personalInfo.email}`}
-                className="relative px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-orange-700 transition-colors duration-300 overflow-hidden"
+                className="relative px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-orange-700 transition-colors duration-300 overflow-hidden quantico-bold"
               >
                 <Mail className="inline-block w-4 h-4 mr-2" />
                 Get In Touch
+              </a>
+
+              <a
+                ref={downloadResumeShineRef}
+                href="/resume_my.pdf"
+                download="resume_my.pdf"
+                className="relative px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 overflow-hidden quantico-bold"
+              >
+                <Download className="inline-block w-4 h-4 mr-2" />
+                Download Resume
               </a>
 
               <a
@@ -250,7 +261,7 @@ export default function Hero() {
                 href={personalInfo.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 overflow-hidden"
+                className="relative px-6 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 overflow-hidden quantico-bold"
               >
                 <Github className="inline-block w-4 h-4 mr-2" />
                 GitHub
