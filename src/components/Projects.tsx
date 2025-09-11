@@ -70,10 +70,10 @@ export default function Projects() {
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 quantico-bold">
             <span className="text-gradient">Featured Projects</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto quantico-regular">
             A showcase of my recent work and creative solutions
           </p>
         </div>
@@ -90,10 +90,10 @@ export default function Projects() {
             className="space-y-8 project-element"
           >
             <div className="space-y-4">
-              <h3 className="text-3xl font-bold text-foreground">
+              <h3 className="text-3xl font-bold text-foreground quantico-bold">
                 Recent Work
               </h3>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-lg quantico-regular">
                 Each project represents a unique challenge and demonstrates my
                 ability to deliver high-quality solutions across different
                 technologies.
@@ -148,20 +148,20 @@ export default function Projects() {
                     className: "w-8 h-8 text-white",
                   })}
                 </div>
-                <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4 border border-primary/20">
+                <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4 border border-primary/20 quantico-regular">
                   {projects[currentProject].category}
                 </span>
-                <h4 className="text-2xl font-bold text-foreground mb-4">
+                <h4 className="text-2xl font-bold text-foreground mb-4 quantico-bold">
                   {projects[currentProject].title}
                 </h4>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <p className="text-muted-foreground leading-relaxed mb-6 quantico-regular">
                   {projects[currentProject].description}
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 mb-6">
                   {projects[currentProject].technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-sm"
+                      className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-sm quantico-regular"
                     >
                       {tech}
                     </span>
