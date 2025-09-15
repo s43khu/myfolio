@@ -53,59 +53,76 @@
   "projects": [
     {
       "icon": "Globe",
-      "title": "AbyssGate",
-      "description": "A project from GitHub showcasing modern web development skills.",
+      "title": "Coin Finance",
+      "description": "A blockchain powered platform aimed at empowering communities while offering financial services. Built on React 18 with web3.js and Wallet connect integrations with Node.js backend structure.",
       "technologies": [
-        "React",
+        "React 18",
+        "web3.js",
+        "Wallet Connect",
+        "Node.js",
+        "Blockchain"
+      ],
+      "category": "Blockchain/Web3",
+      "liveUrl": "https://empowercoin.finance/",
+      "githubUrl": ""
+    },
+    {
+      "icon": "Globe",
+      "title": "Revolvr Retailer",
+      "description": "A free Shopify app to streamline product consignments from brands to retailers. Built with Shopify Remix scaffold and webhooks for order tracking within Shopify ecosystem.",
+      "technologies": [
+        "Shopify Remix",
+        "Webhooks",
+        "Order Tracking",
+        "Shopify API"
+      ],
+      "category": "E-commerce",
+      "liveUrl": "https://apps.shopify.com/revolvr-pos",
+      "githubUrl": ""
+    },
+    {
+      "icon": "Globe",
+      "title": "ExpressW",
+      "description": "An Indrive clone where backend is managed in Node.js with Socket.io for real-time updates and collaborative approach for real-time environments with PayPal and escrow integrations.",
+      "technologies": [
+        "Node.js",
+        "Socket.io",
+        "PayPal API",
+        "Escrow Integration",
+        "Real-time Updates"
+      ],
+      "category": "Backend",
+      "liveUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "icon": "Globe",
+      "title": "Collab Head",
+      "description": "A collaborative site for product teams to directly engage with clients without relying on third parties and directly work on feedback provided by customers. Built on Next.js with Django backend.",
+      "technologies": [
         "Next.js",
-        "TypeScript",
-        "Tailwind CSS"
+        "Django",
+        "Real-time Collaboration",
+        "Client Feedback"
       ],
-      "category": "Full Stack",
-      "liveUrl": "https://github.com/s43khu/abyssgate",
-      "githubUrl": "https://github.com/s43khu/abyssgate"
+      "category": "Collaboration",
+      "liveUrl": "https://lionshead.tidera.ai/",
+      "githubUrl": ""
     },
     {
       "icon": "Globe",
-      "title": "DemoRun",
-      "description": "Another project from GitHub demonstrating frontend capabilities.",
+      "title": "BlackPatch",
+      "description": "An iOS app that connects Apple device owners with on-demand repairs, maintenance and diagnostic services. Currently live with 15k+ active users generating revenue around half a million dollars.",
       "technologies": [
-        "React",
-        "GSAP",
-        "Three.js"
+        "iOS",
+        "Swift",
+        "On-demand Services",
+        "Device Repair",
+        "Diagnostic Services"
       ],
-      "category": "Frontend",
-      "liveUrl": "https://github.com/s43khu/demorun",
-      "githubUrl": "https://github.com/s43khu/demorun"
-    },
-    {
-      "icon": "Globe",
-      "title": "AI Content Generator",
-      "description": "An AI-powered content generation tool that creates SEO-optimized articles, social media posts, and marketing copy.",
-      "technologies": [
-        "Python",
-        "OpenAI API",
-        "FastAPI",
-        "React",
-        "Docker"
-      ],
-      "category": "AI/ML",
-      "liveUrl": "https://example.com",
-      "githubUrl": "https://github.com/yourname/project"
-    },
-    {
-      "icon": "Globe",
-      "title": "Portfolio Website",
-      "description": "A modern, responsive portfolio website showcasing projects, skills, and experience with smooth animations.",
-      "technologies": [
-        "Next.js",
-        "Framer Motion",
-        "Tailwind CSS",
-        "TypeScript"
-      ],
-      "category": "Frontend",
-      "liveUrl": "https://example.com",
-      "githubUrl": "https://github.com/yourname/project"
+      "category": "Mobile App",
+      "liveUrl": "https://blackpatch.app/",
+      "githubUrl": ""
     }
   ],
   "experience": {

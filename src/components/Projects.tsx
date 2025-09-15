@@ -168,24 +168,32 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex justify-center space-x-4">
-                  <a
-                    href={projects[currentProject].liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:text-orange-300 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
-                  </a>
-                  <a
-                    href={projects[currentProject].githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    Code
-                  </a>
+                  {/* NOTE: Only show Live Demo link if liveUrl is available and not empty */}
+                  {projects[currentProject].liveUrl &&
+                    projects[currentProject].liveUrl.trim() !== "" && (
+                      <a
+                        href={projects[currentProject].liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-primary hover:text-orange-300 transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </a>
+                    )}
+                  {/* NOTE: Only show GitHub link if githubUrl is available and not empty */}
+                  {projects[currentProject].githubUrl &&
+                    projects[currentProject].githubUrl.trim() !== "" && (
+                      <a
+                        href={projects[currentProject].githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
+                    )}
                 </div>
               </motion.div>
             </motion.div>
