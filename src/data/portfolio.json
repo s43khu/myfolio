@@ -53,6 +53,38 @@
   "projects": [
     {
       "icon": "Globe",
+      "title": "AbyssGate",
+      "description": "A stunning, interactive web showcase built with Next.js, featuring advanced animations, sound effects, and modern design principles with 3D background effects and matrix-style glitch animations.",
+      "technologies": [
+        "Next.js",
+        "React 19",
+        "Tailwind CSS",
+        "GSAP",
+        "Three.js",
+        "Vanta.js"
+      ],
+      "category": "Frontend",
+      "liveUrl": "https://abyssgate.vercel.app",
+      "githubUrl": "https://github.com/s43khu/abyss-gate"
+    },
+    {
+      "icon": "Globe",
+      "title": "EnDe",
+      "description": "A secure message encoding and decoding application with AES-256 encryption. Built with Next.js and crypto-js library, featuring client-side encryption for maximum security.",
+      "technologies": [
+        "Next.js",
+        "React 19",
+        "Tailwind CSS",
+        "crypto-js",
+        "AES-256",
+        "SHA-256"
+      ],
+      "category": "Security",
+      "liveUrl": "https://en-de.vercel.app",
+      "githubUrl": "https://github.com/s43khu/EnDe"
+    },
+    {
+      "icon": "Globe",
       "title": "Coin Finance",
       "description": "A blockchain powered platform aimed at empowering communities while offering financial services. Built on React 18 with web3.js and Wallet connect integrations with Node.js backend structure.",
       "technologies": [
