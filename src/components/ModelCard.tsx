@@ -1,6 +1,5 @@
 "use client";
 
-// NOTE: component can be found on the Three Examples on sandbox, it's used here as a reference.
 import { useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Text, OrbitControls, PerspectiveCamera } from "@react-three/drei";
@@ -22,7 +21,6 @@ function JSText({ size = 0.15 }: { size?: number }) {
 
   useEffect(() => {
     if (textRef.current) {
-      // Add GSAP animation for initial appearance
       gsap.fromTo(
         textRef.current.scale,
         { x: 0, y: 0, z: 0 },
@@ -36,7 +34,6 @@ function JSText({ size = 0.15 }: { size?: number }) {
         }
       );
 
-      // Add pulsing animation for futuristic effect
       gsap.to(textRef.current.scale, {
         x: size * 1.05,
         y: size * 1.05,
@@ -52,7 +49,6 @@ function JSText({ size = 0.15 }: { size?: number }) {
 
   return (
     <group ref={textRef} position={[0, 0, 0]} scale={[size, size, size]}>
-      {/* Main text with theme-consistent glow */}
       <Text
         position={[0, 0, 0]}
         fontSize={2.2}
@@ -73,7 +69,6 @@ function JSText({ size = 0.15 }: { size?: number }) {
         JS
       </Text>
 
-      {/* Orange outline effect */}
       <Text
         position={[0.08, -0.08, -0.03]}
         fontSize={2.2}
@@ -92,7 +87,6 @@ function JSText({ size = 0.15 }: { size?: number }) {
         JS
       </Text>
 
-      {/* Holographic effect layer */}
       <Text
         position={[0.04, -0.04, 0.02]}
         fontSize={2.2}
@@ -122,24 +116,23 @@ function FloatingParticles() {
   const colors = new Float32Array(particlesCount * 3);
 
   for (let i = 0; i < particlesCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 4; // X
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 4; // Y
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 4; // Z
+    positions[i * 3] = (Math.random() - 0.5) * 4;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 4;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
 
-    // Theme-consistent orange colors
     const colorChoice = Math.random();
     if (colorChoice < 0.33) {
-      colors[i * 3] = 1; // R - Bright Orange
-      colors[i * 3 + 1] = 0.4; // G
-      colors[i * 3 + 2] = 0; // B
+      colors[i * 3] = 1;
+      colors[i * 3 + 1] = 0.4;
+      colors[i * 3 + 2] = 0;
     } else if (colorChoice < 0.66) {
-      colors[i * 3] = 1; // R - Red-Orange
-      colors[i * 3 + 1] = 0.27; // G
-      colors[i * 3 + 2] = 0; // B
+      colors[i * 3] = 1;
+      colors[i * 3 + 1] = 0.27;
+      colors[i * 3 + 2] = 0;
     } else {
-      colors[i * 3] = 1; // R - Golden Orange
-      colors[i * 3 + 1] = 0.67; // G
-      colors[i * 3 + 2] = 0; // B
+      colors[i * 3] = 1;
+      colors[i * 3 + 1] = 0.67;
+      colors[i * 3 + 2] = 0;
     }
   }
 
@@ -173,7 +166,6 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
   useEffect(() => {
     if (!cardRef.current) return;
 
-    // NOTE: Add 3D card tilt effect on mouse move
     const handleMouseMove = (e: MouseEvent) => {
       const card = cardRef.current;
       if (!card) return;
@@ -223,32 +215,47 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
       className="relative w-full h-[500px] perspective-1000"
       style={{ transformStyle: "preserve-3d" }}
     >
-      {/* NOTE: 3D Card Frame with advanced styling */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl border border-slate-700/50 shadow-2xl overflow-hidden">
-        {/* Top breakout effect - text appears to come out */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-slate-800/20 to-transparent rounded-t-2xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-orange-500/10 via-orange-400/5 to-transparent"></div>
         </div>
 
-        {/* Bottom containment frame */}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-900 via-slate-800 to-transparent rounded-b-2xl"></div>
 
-        {/* Side borders for 3D effect */}
         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-500/50 via-orange-400/30 to-transparent"></div>
         <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-orange-500/50 via-orange-400/30 to-transparent"></div>
 
-        {/* Corner accents */}
         <div className="absolute top-4 left-4 w-3 h-3 bg-orange-500 rounded-full shadow-lg"></div>
         <div className="absolute top-4 right-4 w-3 h-3 bg-orange-500 rounded-full shadow-lg"></div>
         <div className="absolute bottom-4 left-4 w-3 h-3 bg-orange-500 rounded-full shadow-lg"></div>
         <div className="absolute bottom-4 right-4 w-3 h-3 bg-orange-500 rounded-full shadow-lg"></div>
 
-        {/* Inner glow effect */}
         <div className="absolute inset-2 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-500/5 rounded-xl"></div>
 
-        {/* TV Screen Effect */}
+        <div
+          className="absolute left-1/2 transform -translate-x-1/2 z-20"
+          style={{
+            bottom: "-200px",
+            zIndex: 9999,
+          }}
+        >
+          <div className="relative">
+            <img
+              src="/avatar_ini.png"
+              alt="Avatar"
+              className="rounded-full shadow-2xl avatar-responsive"
+              style={{
+                width: "400px",
+                height: "400px",
+                maxWidth: "none",
+                maxHeight: "none",
+                filter: "drop-shadow(0 0 10px rgba(255, 102, 0, 0.3))",
+              }}
+            />
+          </div>
+        </div>
+
         <div className="absolute inset-4 bg-black rounded-xl border border-slate-600/30 overflow-hidden">
-          {/* Screen Scan Lines Effect */}
           <div className="absolute inset-0 opacity-5">
             {[...Array(30)].map((_, i) => (
               <div
@@ -259,10 +266,8 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
             ))}
           </div>
 
-          {/* TV Screen Glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-500/5"></div>
 
-          {/* 3D Text Container */}
           <div className="relative w-full h-full">
             <Canvas
               camera={{ position: [0, 0, 2], fov: 60 }}
@@ -271,7 +276,6 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
             >
               <PerspectiveCamera makeDefault position={[0, 0, 2]} />
 
-              {/* Theme-consistent Lighting */}
               <ambientLight intensity={0.3} />
               <directionalLight
                 position={[5, 5, 5]}
@@ -289,13 +293,10 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
                 color="#ffaa00"
               />
 
-              {/* JS Text */}
               <JSText size={size} />
 
-              {/* Floating Particles */}
               <FloatingParticles />
 
-              {/* Subtle orbit controls for interaction */}
               <OrbitControls
                 enableZoom={false}
                 enablePan={false}
@@ -306,14 +307,11 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
             </Canvas>
           </div>
 
-          {/* TV Frame Accent */}
           <div className="absolute inset-0 border-2 border-slate-600/20 rounded-xl"></div>
 
-          {/* TV Power Light */}
           <div className="absolute bottom-2 right-2 w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
         </div>
 
-        {/* Floating particles around the frame */}
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(8)].map((_, i) => (
             <div
@@ -329,7 +327,6 @@ export default function ModelCard({ size = 0.15 }: { size?: number }) {
           ))}
         </div>
 
-        {/* Bottom frame accent */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
       </div>
 

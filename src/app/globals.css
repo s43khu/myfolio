@@ -233,6 +233,22 @@
       box-shadow: 0 0 20px hsl(16 100% 50% / 0.6), 0 0 30px hsl(16 100% 50% / 0.4);
     }
   }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) translateX(-50%);
+    }
+    50% { 
+      transform: translateY(-10px) translateX(-50%);
+    }
+  }
+
+  /* NOTE: Mobile responsive avatar sizing */
+  @media (max-width: 768px) {
+    .avatar-responsive {
+      width: 350px !important;
+    }
+  }
 }
 
 /* Custom scrollbar */
