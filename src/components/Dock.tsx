@@ -48,16 +48,16 @@ export default function Dock() {
   };
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-50">fix; 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="flex items-end gap-1.5 px-3 py-2.5 rounded-3xl"
+        className="flex items-end gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-2.5 rounded-2xl md:rounded-3xl"
         style={{
           background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(40px) saturate(180%)",
-          WebkitBackdropFilter: "blur(40px) saturate(180%)",
+          backdropFilter: "blur(30px) saturate(180%)",
+          WebkitBackdropFilter: "blur(30px) saturate(180%)",
           border: "1px solid rgba(255, 255, 255, 0.18)",
           boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
         }}
@@ -82,7 +82,7 @@ function DockIcon({ item, index, onClick }: DockIconProps) {
 
   return (
     <motion.div
-      className="flex items-center justify-center w-14"
+      className="flex items-center justify-center w-10 h-10 md:w-14 md:h-14"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -95,21 +95,21 @@ function DockIcon({ item, index, onClick }: DockIconProps) {
             onClick(item.href);
           }
         }}
-        className="flex items-center justify-center w-full h-14 rounded-2xl transition-all duration-300 cursor-pointer group relative"
+        className="flex items-center justify-center w-full h-full rounded-xl md:rounded-2xl transition-all duration-300 cursor-pointer group relative"
         style={{
           background: isHovered 
             ? "rgba(255, 255, 255, 0.15)" 
             : "transparent",
-          backdropFilter: isHovered ? "blur(20px)" : "none",
-          WebkitBackdropFilter: isHovered ? "blur(20px)" : "none",
+          backdropFilter: isHovered ? "blur(15px)" : "none",
+          WebkitBackdropFilter: isHovered ? "blur(15px)" : "none",
         }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
         <motion.div
           animate={{
-            scale: isHovered ? 1.3 : 1,
-            y: isHovered ? -10 : 0,
+            scale: isHovered ? 1.2 : 1,
+            y: isHovered ? -6 : 0,
           }}
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
           className="flex items-center justify-center"
@@ -118,8 +118,7 @@ function DockIcon({ item, index, onClick }: DockIconProps) {
           }}
         >
           <Icon 
-            className="w-5 h-5 text-white/90 group-hover:text-white transition-colors duration-300" 
-            size={20}
+            className="w-4 h-4 md:w-5 md:h-5 text-white/90 group-hover:text-white transition-colors duration-300" 
           />
         </motion.div>
         
@@ -128,7 +127,7 @@ function DockIcon({ item, index, onClick }: DockIconProps) {
             initial={{ opacity: 0, y: 10, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.8 }}
-            className="absolute -top-12 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg text-xs text-white whitespace-nowrap pointer-events-none font-medium"
+            className="absolute -top-10 md:-top-12 left-1/2 -translate-x-1/2 px-2 py-1 md:px-3 md:py-1.5 rounded-md md:rounded-lg text-[10px] md:text-xs text-white whitespace-nowrap pointer-events-none font-medium"
             style={{
               background: "rgba(0, 0, 0, 0.7)",
               backdropFilter: "blur(20px)",
