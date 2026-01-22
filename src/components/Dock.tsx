@@ -48,7 +48,7 @@ export default function Dock() {
   };
 
   return (
-    <div className="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-50">fix; 
+    <div className="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-50">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
