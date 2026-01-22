@@ -4,6 +4,7 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Dock from "@/components/Dock";
 import ParticleBackground from "@/components/ThreeBackground";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Experience />
       </main>
       <Footer />
+      <Dock />
     </div>
   );
 }

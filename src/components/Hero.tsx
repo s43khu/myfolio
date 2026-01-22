@@ -187,6 +187,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
+      id="about"
       className="min-h-screen flex items-center justify-center relative overflow-hidden py-20"
     >
       <div className="container mx-auto px-4">

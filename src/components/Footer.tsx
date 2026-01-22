@@ -21,7 +21,7 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={sectionRef} className="py-12 px-4 border-t border-border/20">
+    <footer ref={sectionRef} id="contact" className="py-12 px-4 border-t border-border/20">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
